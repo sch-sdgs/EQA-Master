@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9945D3B-C7C4-4C26-AFE8-CB291C68835C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EQA_Databasev1._0</RootNamespace>
+    <AssemblyName>EQA_Databasev1.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>eqaMIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocX">
+      <HintPath>..\..\..\..\SNPBot\DocX.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\SNPBot\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SHDocVw">
+      <HintPath>..\..\..\..\SNPBot\Interop.SHDocVw.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\EQAMWeb_wsdl.cs" />
+    <Compile Include="Classes\QPulseReport.cs" />
+    <Compile Include="EQAMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EQAMDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_New_Body.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_New_Body.Designer.cs">
+      <DependentUpon>Add_New_Body.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_New_Scheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_New_Scheme.Designer.cs">
+      <DependentUpon>Add_New_Scheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Qpulse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Qpulse.Designer.cs">
+      <DependentUpon>Add_Qpulse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Sample_Comment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Sample_Comment.Designer.cs">
+      <DependentUpon>Add_Sample_Comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Scheme_Comment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Scheme_Comment.Designer.cs">
+      <DependentUpon>Add_Scheme_Comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Appeal Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Appeal Info.Designer.cs">
+      <DependentUpon>Appeal Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Feedback.Designer.cs">
+      <DependentUpon>Add_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Scheme_Outcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Scheme_Outcome.Designer.cs">
+      <DependentUpon>Add_Scheme_Outcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Add_Staff_Lead.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Add_Staff_Lead.Designer.cs">
+      <DependentUpon>Add_Staff_Lead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Edit_Staff_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Edit_Staff_Details.Designer.cs">
+      <DependentUpon>Edit_Staff_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EQA_DatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EQA_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EQA_DatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EQA_DatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff_Involvement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff_Involvement.Designer.cs">
+      <DependentUpon>Staff_Involvement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Log New Scheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Log New Scheme.Designer.cs">
+      <DependentUpon>Log New Scheme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Forms\ViewComments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewComments.Designer.cs">
+      <DependentUpon>ViewComments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\Samples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Samples.Designer.cs">
+      <DependentUpon>Samples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Scheme_Records_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Scheme_Records_View.Designer.cs">
+      <DependentUpon>Scheme_Records_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\StarLimsWSDL.cs" />
+    <Compile Include="Forms\StartUp_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StartUp_Form.Designer.cs">
+      <DependentUpon>StartUp_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Update_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Update_Record.Designer.cs">
+      <DependentUpon>Update_Record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\View_Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\View_Feedback.Designer.cs">
+      <DependentUpon>View_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\View_Samples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\View_Samples.Designer.cs">
+      <DependentUpon>View_Samples.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\UserAuthentication_wsdl.cs" />
+    <EmbeddedResource Include="Forms\Add_New_Body.resx">
+      <DependentUpon>Add_New_Body.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_New_Scheme.resx">
+      <DependentUpon>Add_New_Scheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Qpulse.resx">
+      <DependentUpon>Add_Qpulse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Sample_Comment.resx">
+      <DependentUpon>Add_Sample_Comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Scheme_Comment.resx">
+      <DependentUpon>Add_Scheme_Comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Appeal Info.resx">
+      <DependentUpon>Appeal Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Feedback.resx">
+      <DependentUpon>Add_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Scheme_Outcome.resx">
+      <DependentUpon>Add_Scheme_Outcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Add_Staff_Lead.resx">
+      <DependentUpon>Add_Staff_Lead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Edit_Staff_Details.resx">
+      <DependentUpon>Edit_Staff_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff_Involvement.resx">
+      <DependentUpon>Staff_Involvement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Log New Scheme.resx">
+      <DependentUpon>Log New Scheme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff_Involvement.yo-NG.resx">
+      <DependentUpon>Staff_Involvement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewComments.resx">
+      <DependentUpon>ViewComments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\Samples.resx">
+      <DependentUpon>Samples.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Scheme_Records_View.resx">
+      <DependentUpon>Scheme_Records_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StartUp_Form.resx">
+      <DependentUpon>StartUp_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Update_Record.resx">
+      <DependentUpon>Update_Record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\View_Feedback.resx">
+      <DependentUpon>View_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\View_Samples.resx">
+      <DependentUpon>View_Samples.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="EQAMDataSet.xsc">
+      <DependentUpon>EQAMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EQAMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EQAMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EQAMDataSet.xss">
+      <DependentUpon>EQAMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EQA_DatabaseDataSet.xsc">
+      <DependentUpon>EQA_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EQA_DatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EQA_DatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EQA_DatabaseDataSet.xss">
+      <DependentUpon>EQA_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EQA_DatabaseDataSet1.xsc">
+      <DependentUpon>EQA_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EQA_DatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EQA_DatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EQA_DatabaseDataSet1.xss">
+      <DependentUpon>EQA_DatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="eqaMIcon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
